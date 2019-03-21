@@ -78,6 +78,6 @@
 							 {violet}
 								 {cyan}
 									 {white}
-		 {reset} --> reset color / bold to default (white).
 		 {bold} --> write the text in bold.
 		 {underline} --> underline the text.
+		 {reset} --> reset all to default.
