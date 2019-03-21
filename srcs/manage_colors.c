@@ -19,23 +19,19 @@ int		put_color(t_printf *pf, int i)
 		handle_buff(pf, "\033[1;3", 0, 5);
 		char_padding(pf, (i + 48));
 		char_padding(pf, 'm');
-		pf->ret -= 7;
 	}
 	else if (i == 8 || i == 9)
 	{
 		handle_buff(pf, "\033[", 0, 2);
 		char_padding(pf, ((i - 8) + 48));
 		char_padding(pf, 'm');
-		pf->ret -= 4;
 	}
 	else if (i == 10)
 	{
 		handle_buff(pf, "\033[", 0, 2);
 		char_padding(pf, ((i - 6) + 48));
 		char_padding(pf, 'm');
-		pf->ret -= 4;
 	}
-	pf->ret = pf->ret < 0 ? 0 : pf->ret;
 	return (1);
 }
 
