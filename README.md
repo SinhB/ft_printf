@@ -1,9 +1,11 @@
-		                         FT_PRINTF
- NAME
-	ft_printf
- SYNOPSIS
+					 FT_PRINTF
+					 
+ 					SYNOPSIS
+					
 	ft_printf format [arguments ...]
- DESCRIPTION
+	
+ 					DESCRIPTION
+					
 	The ft_printf utility formats and prints its arguments, after the first,
 	under control of the format.  The format is a character string which con-
 	tains three types of objects: plain characters, which are simply copied
