@@ -6,7 +6,7 @@
 /*   By: yabecret <yabecret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 17:48:20 by yabecret          #+#    #+#             */
-/*   Updated: 2019/03/13 17:29:11 by yabecret         ###   ########.fr       */
+/*   Updated: 2019/03/19 15:14:27 by yabecret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ long double		ft_round(t_printf *pf, long double nb, int prec)
 	while (prec-- > 0)
 	{
 		tmp = (intmax_t)new % 10;
-		if (tmp != 9 && tmp != 9)
+		if (tmp != 9 && tmp != -9)
 			pf->last_up = ilast;
 		new *= 10.0;
 		ilast++;
@@ -51,16 +51,21 @@ int				ft_putllnbr(t_printf *pf, intmax_t nb)
 	return (i);
 }
 
-int				f_conv(t_printf *pf, long double nb, int prec)
+static void		f_flags_padding(t_printf *pf, long double nb)
 {
-	uintmax_t	n;
-
-	n = (intmax_t)nb;
-	if (nb < 0)
+	if ((nb < 0) || !(1 / nb > 0))
 		char_padding(pf, '-');
 	if ((!(pf->flags & F_ZERO) && pf->flags & F_PLUS && nb >= 0)
 		|| pf->flags & F_SPACE)
 		(pf->flags & F_SPACE) ? char_padding(pf, ' ') : char_padding(pf, '+');
+}
+
+int				f_conv(t_printf *pf, long double nb, int prec)
+{
+	intmax_t	n;
+
+	n = (intmax_t)nb;
+	f_flags_padding(pf, nb);
 	ft_putllnbr(pf, n);
 	prec ? char_padding(pf, '.') : 0;
 	nb -= (intmax_t)nb;
@@ -72,8 +77,8 @@ int				f_conv(t_printf *pf, long double nb, int prec)
 		if (pf->last_up + prec <= pf->precision)
 		{
 			if (pf->last_up + prec == pf->precision)
-				n += pf->extended_prec;
-			else if (n == 9 && pf->extended_prec)
+				n = (n > 0) ? n + pf->extended_prec : -n + pf->extended_prec;
+			else if ((n == 9 || n == -9) && pf->extended_prec)
 				n = 0;
 			n = (n == 10) ? 0 : n;
 		}
