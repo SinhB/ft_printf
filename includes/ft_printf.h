@@ -6,7 +6,7 @@
 /*   By: yabecret <yabecret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 11:50:32 by yabecret          #+#    #+#             */
-/*   Updated: 2019/03/13 19:11:17 by yabecret         ###   ########.fr       */
+/*   Updated: 2019/05/10 16:50:13 by yabecret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,7 +140,6 @@ void			*ft_memset(void *s, int c, size_t n);
 void			*ft_memcpy(void *dest, const void *src, size_t n);
 void			ft_bzero(void *s, size_t n);
 void			ft_putstr_fd(char const *s, int fd);
-char			*ft_strcpy(char *dest, const char *src);
 char			*to_upper(char *str);
 char			*get_wchar(wint_t wc);
 int				ft_strnequ(char const *s1, char const *s2, size_t n);

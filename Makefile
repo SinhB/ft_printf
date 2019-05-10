@@ -6,7 +6,7 @@
 #    By: yabecret <yabecret@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/13 19:43:10 by yabecret          #+#    #+#              #
-#    Updated: 2019/03/12 17:48:16 by yabecret         ###   ########.fr        #
+#    Updated: 2019/05/10 16:49:34 by yabecret         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,6 @@ UTILS	=		$(UTILSDIR)ft_atoi.c			\
 				$(UTILSDIR)ft_memcpy.c			\
 				$(UTILSDIR)ft_memset.c			\
 				$(UTILSDIR)ft_putstr_fd.c		\
-				$(UTILSDIR)ft_strcpy.c			\
 				$(UTILSDIR)ft_strlen.c			\
 				$(UTILSDIR)ft_strnequ.c			\
 				$(UTILSDIR)ft_wchar.c			\
